@@ -1,0 +1,38 @@
+This is to put the operational ENSO forecast.
+all compling is done: pgf78 *
+
+(1) download the data from internet.
+
+windstress: (a) run readfsuwind.f (./data) to transfer data into
+                unformatted format.
+            (b) run modelwind.f (./data) to interpolate FSU to the 
+                model grid.
+            (c) the wind data is put in ~tym/linux/model_data 
+                using 'cat' comment to prolong the wind data           
+
+ssh: (a)   download the ncep ssh data.
+           run read_ssh.f to get anomaly data for assimilation. 
+
+(2) do forecast
+
+    (a) using the model ~/ENSO_forecast/model/model_assh1
+
+(3) after finishing the prediction, to run ~/enso_forecast/fortran/index_2.for
+    to extract the NINO3 index, and using ~/enso_forecast/matlab/plot_final.m
+    to plot the nino3 curve. The observed NINO3 index is from NCEP.
+    
+(4) go to ~enso_forecast/fortran/spatial_case_predic.f to run fortran 
+    program to get the spatial prediction and then use Grads to plot it. 
+
+(5) go to ~/output to modefy t.ctl and ss.gs before
+    run Grads. Using "wi test.gif" (or printim test.gif )command to 
+    convert graphics into image GIF file in Grads envrionment.  
+
+(6) Finaly to go to www/enso.html to update the prefiction.
+
+
+
+
+
+
+
